@@ -1,62 +1,62 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Easypods</title>
     <link rel="stylesheet" type="text/css" href="index.css">
+    <style>
+      /* Add your CSS styles here if needed */
+    </style>
   </head>
   
   <body>
-      <header>
-        <h1>EasyPods</h1>
-        <p>TWS i7s Wireless Bluetooth 5.0 Headphones</p>
-        
-    	<hr width="3%">
-
+    <header>
+      <h1>EasyPods</h1>
+      <p>TWS i7s Wireless Bluetooth 5.0 Headphones</p>
+  
+      <hr width="3%">
+  
       <div class="nav">
-
         <nav>
-	        <div>
-	            <a href="index.html">Hem</a>
-	            <a href="produkt.html">Produkt</a>
-	            <a href="kontakt.html">Kontakta oss</a>
-	        </div>
-	        <div>
-	            <a href="">
-	                <img src="bilder\instagram.png" alt="instagram">
-	            </a>
-	            <a href="">
-	                <img src="bilder\tiktok.png" alt="tiktok">
-	            </a>
-	        </div>
-	    </nav>
-
+          <div>
+            <a href="index.html">Hem</a>
+            <a href="produkt.html">Produkt</a>
+            <a href="kontakt.html">Kontakta oss</a>
+          </div>
+          <div>
+            <a href="">
+              <img src="bilder\instagram.png" alt="instagram">
+            </a>
+            <a href="">
+              <img src="bilder\tiktok.png" alt="tiktok">
+            </a>
+          </div>
+        </nav>
       </div>
-
     </header>
 
     <center>
-	  <div class="header-background">
-	      <div class="header-image">
-	          <table width="90%">
-	            <tr>
-	              <td align="center" width="13%">
-	                <img src="bilder\Storbild.png">
-	              
-	              <div class="header-title">
-	              <h1>TWS i7s Wireless Headphones</h1>
-	              <p>150 SEK</p>
-	              <button>Köp nu</button>
-	              </div>
-
-	              </td>
-	            </tr>
-	          </table>
-	      </div>
-	  </div>
-	</center>
+      <div class="header-background">
+        <div class="header-image">
+          <table width="90%">
+            <tr>
+              <td align="center" width="13%">
+                <img src="bilder\Storbild.png">
+                <div id="header-title">
+                  <div class="header-title">
+                    <h1>TWS i7s Wireless Headphones</h1>
+                    <p>150 SEK</p>
+                    <button>Köp nu</button>
+                  </div>
+                </div>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </center>
 
     <script type="text/javascript">
       function checkScreenSize() {
@@ -67,53 +67,120 @@
       window.onload = checkScreenSize;
     </script>
     <script type="text/javascript">
-      // Get the .header-title element
-      var headerTitle = document.querySelector('.header-title');
-
-      var lastScrollPosition = 0;
-      var threshold = 200;
-      var stopAt = 500; // The number of pixels after which to stop
-
-      function handleScroll() {
-        var scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
-
-        // Add the class based on scroll position
-        if (scrollPosition > lastScrollPosition && scrollPosition > threshold && scrollPosition < stopAt) {
-          headerTitle.classList.add('sticky');
+      // JavaScript
+      const headerTitle = document.getElementById('header-title');
+      const stopPoint = 600;
+      // Offset of Y value
+      const offset = 100;
+  
+      window.addEventListener('scroll', function() {
+        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        let modifiedScrollTop = scrollTop + offset;
+        if (scrollTop < stopPoint) {
+          headerTitle.style.top = `${modifiedScrollTop}px`;
         } 
-
-        // Remember the last scroll position
-        lastScrollPosition = scrollPosition;
-      }
-
-      // Add a scroll event listener using requestAnimationFrame
-      var raf;
-      function loop() {
-        handleScroll();
-        raf = requestAnimationFrame(loop);
-      }
-
-      // Start the loop
-      loop();
-
-      // Optionally, you might want to cancel the animation frame when needed
-      // window.cancelAnimationFrame(raf);
+        else if (scrollTop > stopPoint) {
+          return;
+        }
+        else {
+          headerTitle.style.top = `${modifiedScrollTop}px`;
+        }
+      });
+    </script>
+  
+    <script type="text/javascript">
+      // JavaScript
+      let lastScrollTop = 0;
+      const nav = document.getElementById('myFooter');
+  
+      window.addEventListener('scroll', function() {
+        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        if (scrollTop > lastScrollTop) {
+          nav.classList.add('hidden');
+        } else {
+          nav.classList.remove('hidden');
+        }
+        lastScrollTop = scrollTop;
+      });
     </script>
 
-  </body>
-
-  <footer>
-    <div class="footer">
-      <div class="footer-content">
-        <div class="footer-section about">
+    <footer id="myFooter">
+      <div class="footer">
+        <div class="footer-content">
           <h1 class="logo-text"><span>Easypods</span></h1>
           <p>
-            Easypods är ett företag som säljer trådlösa hörlurar. Vi har ett stort utbud av hörlurar och vi har något för alla. 
+            Easypods är ett företag som säljer trådlösa hörlurar. Vi har ett stort utbud av hörlurar och vi har något för alla.
           </p>
           <div class="contact">
-            <span><i class="fas fa-phone"></i> &nbsp; 070-123 45 67</span>
-            <span><i class="fas fa-envelope"></i> &nbsp;
-          <br>
-    </div>
-  </footer>
+            <!-- Add your contact information here if needed -->
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
 </html>
