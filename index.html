@@ -1,63 +1,119 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Easypods</title>
-  <link rel="stylesheet" type="text/css" href="index.css">
 
-</head>
-<body>
-
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Easypods</title>
+    <link rel="stylesheet" type="text/css" href="index.css">
+  </head>
+  
+  <body>
       <header>
-        <h1>TWS i7s Wireless Bluetooth 5.0 Headphones</h1>
-        <p>Wireless in-ear headphones Earbuds White - Clear sound</p>
+        <h1>EasyPods</h1>
+        <p>TWS i7s Wireless Bluetooth 5.0 Headphones</p>
         
-    <hr width="3%">
+    	<hr width="3%">
 
-<div class="nav">
+      <div class="nav">
 
-    <nav>
-        <div>
-            <a href="#">Home</a>
-            <a href="#">Product</a>
-            <a href="#">Info</a>
-            <a href="#">Contact</a>
-        </div>
-        <div>
-            <a href="">
-                <img src="bilder\instagram.png" alt="instagram">
-            </a>
-            <a href="">
-                <img src="bilder\tiktok.png" alt="tiktok">
-            </a>
-        </div>
-    </nav>
+        <nav>
+	        <div>
+	            <a href="index.html">Hem</a>
+	            <a href="produkt.html">Produkt</a>
+	            <a href="kontakt.html">Kontakta oss</a>
+	        </div>
+	        <div>
+	            <a href="">
+	                <img src="bilder\instagram.png" alt="instagram">
+	            </a>
+	            <a href="">
+	                <img src="bilder\tiktok.png" alt="tiktok">
+	            </a>
+	        </div>
+	    </nav>
 
-</div>
+      </div>
 
     </header>
 
-<center>
-  <div class="header-background">
-      <div class="header-image">
-          <table width="90%">
-            <tr>
-              <td align="center" wid th="13%">
-                <img src="bilder\pods2.png"><img src="bilder\pods1.png">
-              
-              <div class="header-title">
-              <h1>TWS i7s Wireless Headphones</h1>
-              <p>150kr</p>
-              <button>Köp nu</button>
-              </div>
+    <center>
+	  <div class="header-background">
+	      <div class="header-image">
+	          <table width="90%">
+	            <tr>
+	              <td align="center" width="13%">
+	                <img src="bilder\Storbild.png">
+	              
+	              <div class="header-title">
+	              <h1>TWS i7s Wireless Headphones</h1>
+	              <p>150 SEK</p>
+	              <button>Köp nu</button>
+	              </div>
 
-              </td>
-            </tr>
-          </table>
-      </div>
-  </div>
-</center>
+	              </td>
+	            </tr>
+	          </table>
+	      </div>
+	  </div>
+	</center>
 
-</body>
+    <script type="text/javascript">
+      function checkScreenSize() {
+        if (window.innerWidth <= 768) {
+          window.location.href = "indexMobile.html";
+        }
+      }
+      window.onload = checkScreenSize;
+    </script>
+    <script type="text/javascript">
+      // Get the .header-title element
+      var headerTitle = document.querySelector('.header-title');
+
+      var lastScrollPosition = 0;
+      var threshold = 200;
+      var stopAt = 500; // The number of pixels after which to stop
+
+      function handleScroll() {
+        var scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+
+        // Add the class based on scroll position
+        if (scrollPosition > lastScrollPosition && scrollPosition > threshold && scrollPosition < stopAt) {
+          headerTitle.classList.add('sticky');
+        } 
+
+        // Remember the last scroll position
+        lastScrollPosition = scrollPosition;
+      }
+
+      // Add a scroll event listener using requestAnimationFrame
+      var raf;
+      function loop() {
+        handleScroll();
+        raf = requestAnimationFrame(loop);
+      }
+
+      // Start the loop
+      loop();
+
+      // Optionally, you might want to cancel the animation frame when needed
+      // window.cancelAnimationFrame(raf);
+    </script>
+
+  </body>
+
+  <footer>
+    <div class="footer">
+      <div class="footer-content">
+        <div class="footer-section about">
+          <h1 class="logo-text"><span>Easypods</span></h1>
+          <p>
+            Easypods är ett företag som säljer trådlösa hörlurar. Vi har ett stort utbud av hörlurar och vi har något för alla. 
+          </p>
+          <div class="contact">
+            <span><i class="fas fa-phone"></i> &nbsp; 070-123 45 67</span>
+            <span><i class="fas fa-envelope"></i> &nbsp;
+          <br>
+    </div>
+  </footer>
 </html>
