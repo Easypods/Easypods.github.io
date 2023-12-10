@@ -47,7 +47,7 @@
                 <div id="header-title">
                   <div class="header-title">
                     <h1>TWS i7s Wireless Headphones</h1>
-                    <p>150 SEK</p>
+                    <p>175 SEK</p>
                     <button>Köp nu</button>
                   </div>
                 </div>
@@ -69,7 +69,16 @@
     <script type="text/javascript">
       // JavaScript
       const headerTitle = document.getElementById('header-title');
-      const stopPoint = 600;
+      // Calculate the stop point based on screensize
+      // Get the window's width and height
+      var windowWidth = window.innerWidth;
+      var windowHeight = window.innerHeight;
+
+      // Define the stop point as a percentage of the screen size
+      var stopPointWidth = windowWidth * 0.3; // 80% of the screen width
+      var stopPointHeight = windowHeight * 0.3; // 80% of the screen height
+
+      const stopPoint = stopPointHeight;
       // Offset of Y value
       const offset = 100;
   
@@ -87,7 +96,6 @@
         }
       });
     </script>
-  
     <script type="text/javascript">
       // JavaScript
       let lastScrollTop = 0;
