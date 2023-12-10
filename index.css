@@ -238,3 +238,40 @@
         border: 1px solid black;
         cursor: pointer;
     }
+
+
+    /*Ej med i hemsidan*/
+
+
+    form {
+        max-width: 400px;
+        margin: 0 auto;
+        margin-bottom: 100px;
+        margin-top: 20px;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 8px;
+    }
+
+    input,
+    textarea {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 16px;
+        box-sizing: border-box;
+    }
+
+    button {
+        background-color: transparent;
+        color: black;
+        padding: 10px 15px;
+        border: 1px solid black;
+        border-radius: 2px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        border: 2px solid black;
+    }
