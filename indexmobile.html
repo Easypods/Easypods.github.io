@@ -21,6 +21,30 @@
             text-align: center;
         }
 
+        h3 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: #444;
+            text-align: center;
+        }
+
+        .countdown {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1em;
+        }
+
+        .countdown-item {
+            margin: 0 15px;
+        }
+
+        .countdown-item span {
+            font-size: 2em;
+            margin-right: 5px;
+        }
+
+
         .letter {
             margin-top: 20px;
             background-color: #fff;
@@ -83,19 +107,36 @@
 </head>
 <body style="border-radius: 20px;">
 
-    <h1>Coming Soon</h1>
+    <h1 style="font-size: 2em;">Coming Soon</h1>
+
+    <h3>Nedräkning tills att mobil-versionen släpps:</h3>
+
+    <div id="countdown" class="countdown">
+        <div class="countdown-item">
+            <span id="days">00</span>
+            dagar
+        </div>
+        <div class="countdown-item">
+            <span id="hours">00</span>
+            timmar
+        </div>
+        <div class="countdown-item">
+            <span id="minutes">00</span>
+            minuter
+        </div>
+        <div class="countdown-item">
+            <span id="seconds">00</span>
+            sekunder
+        </div>
+    </div>
 
     <div class="letter">
         <div class="letter-header">
             <h2 style="margin-bottom: 0;">EasyPods</h2>
         </div>
 
-        <div class="letter-date">
-            <p>Datum: 7 december, 2023</p>
-        </div>
-
         <div class="letter-content">
-            <p>Hej,</p>
+            <p style="margin-top: 20px;">Hej,</p>
 
             <p>Vi jobbar på en mobilversion av vår webbplats!</p>
             <p>Kolla gärna in desktop-versionen i väntan på att den mobila versionen släpps.</p>
@@ -117,6 +158,36 @@
     </div>
 
     <a href="index.html" class="button" style="margin-top: 20px;">Besök Desktop-versionen</a>
+<script>
+        // Set the date we're counting down to
+        const countDownDate = new Date("Dec 18, 2023 18:00:00").getTime();
 
+        // Update the countdown every 1 second
+        const x = setInterval(function() {
+            // Get the current date and time
+            const now = new Date().getTime();
+
+            // Calculate the remaining time
+            const distance = countDownDate - now;
+
+            // Calculate days, hours, minutes, and seconds
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Display the countdown
+            document.getElementById("days").innerText = days < 10 ? "0" + days : days;
+            document.getElementById("hours").innerText = hours < 10 ? "0" + hours : hours;
+            document.getElementById("minutes").innerText = minutes < 10 ? "0" + minutes : minutes;
+            document.getElementById("seconds").innerText = seconds < 10 ? "0" + seconds : seconds;
+
+            // If the countdown is over, display a message
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("countdown").innerHTML = "<p>Tiden har gått ut!</p>";
+            }
+        }, 1000);
+    </script>
 </body>
 </html>
