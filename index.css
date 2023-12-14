@@ -81,6 +81,11 @@
     padding: 1em;
     }
 
+    .header-title a {
+      text-decoration: none;
+      color: #000000;
+    }
+
 
     nav {
     display: flex;
@@ -237,6 +242,11 @@
         padding: 8px 40px;
         border: 1px solid black;
         cursor: pointer;
+    }
+
+    #köp-knapp a {
+      text-decoration: none;
+      color: #000000;
     }
 
 
